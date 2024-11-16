@@ -12,8 +12,5 @@ for (int counter = 0; counter < 40; counter++)
 
     Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
    
-    if (counter % 3 == 0)
-        Thread.Sleep(rnd.Next(900000, 960000));
-    else
-        Thread.Sleep(rnd.Next(9000, 15000));
+    Thread.Sleep(rnd.Next(9000, 15000));
 }
