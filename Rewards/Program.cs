@@ -3,7 +3,14 @@ using System.Diagnostics;
 
 Random rnd = new();
 
-for (int counter = 0; counter < 40; counter++)
+string[] arguments = Environment.GetCommandLineArgs();
+
+int numberOfRuns = 40;
+
+if (arguments.Count() > 1)
+    int.TryParse(arguments[1], out numberOfRuns);
+
+for (int counter = 0; counter < numberOfRuns; counter++)
 {
     WordGenerator wg = new();
 
@@ -14,3 +21,5 @@ for (int counter = 0; counter < 40; counter++)
    
     Thread.Sleep(rnd.Next(9000, 15000));
 }
+
+Environment.Exit(0);
