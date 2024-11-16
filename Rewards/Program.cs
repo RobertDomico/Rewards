@@ -10,6 +10,8 @@ int numberOfRuns = 40;
 if (arguments.Count() > 1)
     int.TryParse(arguments[1], out numberOfRuns);
 
+Console.WriteLine(numberOfRuns);
+
 for (int counter = 0; counter < numberOfRuns; counter++)
 {
     WordGenerator wg = new();
@@ -20,6 +22,8 @@ for (int counter = 0; counter < numberOfRuns; counter++)
     Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
    
     Thread.Sleep(rnd.Next(9000, 15000));
+
+    Console.WriteLine(counter+1);
 }
 
 Environment.Exit(0);
