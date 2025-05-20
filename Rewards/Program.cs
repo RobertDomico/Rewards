@@ -12,6 +12,9 @@ if (arguments.Count() > 1)
 
 Console.WriteLine(numberOfRuns);
 
+int minTime = 200000;
+int maxTime = 400000;
+
 for (int counter = 0; counter < numberOfRuns; counter++)
 {
     WordGenerator wg = new();
@@ -21,7 +24,7 @@ for (int counter = 0; counter < numberOfRuns; counter++)
 
     Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
    
-    Thread.Sleep(rnd.Next(9000, 15000));
+    Thread.Sleep(rnd.Next(minTime, maxTime));
 
     Console.WriteLine(counter+1);
 }
