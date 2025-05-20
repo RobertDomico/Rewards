@@ -9,6 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="CrypticWizard.RandomWordGenerator" Version="0.9.5" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

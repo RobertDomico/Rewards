@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Rewards": {
-      "commandName": "Project",
-      "commandLineArgs": "30"
-    }
-  }
-}

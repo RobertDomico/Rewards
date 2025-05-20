@@ -1,19 +1,28 @@
 ﻿using CrypticWizard.RandomWordGenerator;
+using System.Configuration;
 using System.Diagnostics;
 
 Random rnd = new();
 
-string[] arguments = Environment.GetCommandLineArgs();
+string? numberOfRunsConfig = ConfigurationManager.AppSettings["numberOfRuns"];
+if (!int.TryParse(numberOfRunsConfig, out int numberOfRuns))
+{
+    numberOfRuns = 40;
+}
 
-int numberOfRuns = 40;
+string? minTimeConfig = ConfigurationManager.AppSettings["minTime"];
+if (!int.TryParse(minTimeConfig, out int minTime))
+{
+    minTime = 200000;
+}
 
-if (arguments.Count() > 1)
-    int.TryParse(arguments[1], out numberOfRuns);
+string? maxTimeConfig = ConfigurationManager.AppSettings["maxTime"];
+if (!int.TryParse(maxTimeConfig, out int maxTime))
+{
+    maxTime = 200000;
+}
 
 Console.WriteLine(numberOfRuns);
-
-int minTime = 200000;
-int maxTime = 400000;
 
 for (int counter = 0; counter < numberOfRuns; counter++)
 {
